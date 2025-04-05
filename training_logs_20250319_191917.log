@@ -1,0 +1,3 @@
+2025-03-19 19:19:17,844 - WARNING - Dataset size (30) is smaller than recommended (50). Consider expanding the dataset for better model generalization.
+2025-03-19 19:19:19,697 - INFO - Created and saved new train-validation split.
+2025-03-19 19:21:31,043 - INFO - Final evaluation metrics: {'eval_loss': 0.7945313453674316, 'eval_accuracy': 0.8333333333333334, 'eval_runtime': 1.5853, 'eval_samples_per_second': 3.785, 'eval_steps_per_second': 0.631, 'epoch': 5.0}

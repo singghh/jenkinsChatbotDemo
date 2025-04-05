@@ -1,0 +1,31 @@
+query,intent
+show me git plugin,plugin_query
+tell me about maven plugin,plugin_query
+what is the docker plugin,plugin_query
+show me slack plugin,plugin_query
+describe the github plugin,plugin_query
+what does the junit plugin do,plugin_query
+show me email-ext plugin,plugin_query
+tell me about credentials plugin,plugin_query
+what is the sonarqube plugin,plugin_query
+describe the artifactory plugin,plugin_query
+I need docs for pipelines,doc_request
+show me documentation for jobs,doc_request
+where can I find nodes docs,doc_request
+get me credentials documentation,doc_request
+I need multibranch pipeline docs,doc_request
+show security documentation,doc_request
+where are the plugin docs,doc_request
+docs for managing nodes,doc_request
+documentation on credentials,doc_request
+find multibranch docs,doc_request
+Give me a pipeline example,snippet_request
+show me a git snippet,snippet_request
+can you give a slack notification example,snippet_request
+I need a pipeline snippet,snippet_request
+show a git checkout example,snippet_request
+slack message snippet,snippet_request
+example pipeline code,snippet_request
+git snippet for Jenkins,snippet_request
+slack notification code,snippet_request
+pipeline example for Jenkins,snippet_request

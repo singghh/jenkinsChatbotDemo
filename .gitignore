@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pkl
+training_logs_*.log
+jenkins_assistant_*.log
+!jenkins_assistant_20250331_111515.log
+!training_logs_20250319_191917.log
+chatbot_env/
+.env
+*.db

@@ -1,0 +1,18 @@
+2025-03-31 11:15:15,304 - INFO - DistilBERT model and label encoder loaded successfully
+2025-03-31 11:16:36,208 - ERROR - Error processing WebSocket message: (1001, '')
+2025-03-31 11:17:35,456 - INFO - Received query: 'How do I create a new Jenkins pipeline?' with classified intent: 'doc_request'
+2025-03-31 11:18:06,006 - INFO - Received query: 'syntax for creating a git pipeline' with classified intent: 'plugin_query'
+2025-03-31 11:18:30,523 - INFO - Received query: 'What is the difference between freestyle and pipeline jobs in Jenkins?' with classified intent: 'doc_request'
+2025-03-31 11:19:17,570 - INFO - Received query: 'Explain quantum physics.' with classified intent: 'plugin_query'
+2025-03-31 11:19:34,819 - INFO - Received query: 'How do I configure a webhook in Jenkins?' with classified intent: 'plugin_query'
+2025-03-31 11:20:15,316 - ERROR - Error processing WebSocket message: (1001, '')
+2025-03-31 11:23:56,622 - INFO - Received query: 'show me git plugin' with classified intent: 'plugin_query'
+2025-03-31 11:24:11,910 - INFO - Received query: 'write code for pipeline' with classified intent: 'plugin_query'
+2025-03-31 11:24:26,437 - INFO - Received query: 'write snippet for pipeline' with classified intent: 'plugin_query'
+2025-03-31 11:28:13,447 - ERROR - Error processing WebSocket message: (1001, '')
+2025-03-31 11:28:14,510 - ERROR - Error processing WebSocket message: (1001, '')
+2025-03-31 11:28:18,625 - INFO - Received query: 'hello' with classified intent: 'plugin_query'
+2025-03-31 11:30:01,508 - INFO - Received query: 'git plugin' with classified intent: 'plugin_query'
+2025-03-31 11:30:36,509 - INFO - Received query: 'can you provide Extended Timer Trigger' with classified intent: 'plugin_query'
+2025-03-31 11:30:47,452 - INFO - Received query: 'Extended Timer Trigger plugin' with classified intent: 'plugin_query'
+2025-03-31 11:32:42,533 - ERROR - Error processing WebSocket message: (1012, None)

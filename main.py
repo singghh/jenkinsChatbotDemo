@@ -165,22 +165,152 @@ html = """
 <html>
     <head>
         <title>Jenkins Chatbot Demo with DistilBERT</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .header h1 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .header p {
+                font-size: 14px;
+                color: #555;
+                margin: 0;
+            }
+            .chat-container {
+                text-align: center;
+                background: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                height: 80vh;
+            }
+            .chat-container img {
+                width: 100px;
+                margin-bottom: 20px;
+            }
+            .chat-box {
+                flex: 1;
+                overflow-y: auto;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #f9f9f9;
+            }
+            .chat-box .message {
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .chat-box .user {
+                background-color: #007bff;
+                color: white;
+                text-align: right;
+            }
+            .chat-box .ai {
+                background-color: #e9ecef;
+                color: #333;
+                text-align: left;
+            }
+            .chat-container input {
+                width: calc(100% - 90px);
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .chat-container button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            .chat-container button:hover {
+                background-color: #0056b3;
+            }
+            .loading {
+                display: none;
+                margin-top: 10px;
+            }
+            .box {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                gap: 20px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Jenkins Chatbot Demo</h1>
-        <input type="text" id="message" placeholder="Type a query (e.g., Show me Git plugin)" />
-        <button onclick="sendMessage()">Send</button>
-        <p id="response"></p>
-<script>
-    var ws = new WebSocket("wss://jenkinschatbotdemo.onrender.com/ws");
-    ws.onmessage = function(event) {
-        document.getElementById("response").innerText = event.data;
-    };
-    function sendMessage() {
-        var message = document.getElementById("message").value;
-        ws.send(message);
-    }
-</script>
+        <div class="box">
+        <div class="header">
+            <h1>Jenkins Chatbot Demo (Limited Dataset of 30 Rows)</h1>
+            <p>This is for showcasing my skills, dedication, and interest in developing innovative solutions.</p>
+            <b>Please be patient; the chatbot will respond as it is deployed on Render.</b>
+            <p>GitHub Repository: <a href="https://github.com/singghh/jenkinsChatbotDemo" target="_blank">https://github.com/singghh/jenkinsChatbotDemo</a></p>
+        </div>
+        <div class="chat-container">
+            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg" alt="Jenkins Logo" />
+            
+            <div class="chat-box" id="chat-box">
+                <div class="message ai">Hi there! I'm Jenkins Chat Genius, your AI assistant. How can I help you today?</div>
+            </div>
+            <div style="display: flex;">
+                <input type="text" id="message" placeholder="Type your query here..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            <div class="loading" id="loading">Loading...</div>
+        </div>
+        </div>
+        <script>
+            var ws = new WebSocket("wss://jenkinschatbotdemo.onrender.com/ws");
+            ws.onopen = function(event) {
+                console.log("WebSocket connection established.");
+            };
+            ws.onmessage = function(event) {
+                document.getElementById("loading").style.display = "none";
+                var chatBox = document.getElementById("chat-box");
+                var aiMessage = document.createElement("div");
+                aiMessage.className = "message ai";
+                aiMessage.innerText = event.data;
+                chatBox.appendChild(aiMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            };
+            function sendMessage() {
+                var message = document.getElementById("message").value;
+                if (message.trim() === "") return;
+                var chatBox = document.getElementById("chat-box");
+                var userMessage = document.createElement("div");
+                userMessage.className = "message user";
+                userMessage.innerText = message;
+                chatBox.appendChild(userMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById("loading").style.display = "block";
+                document.getElementById("message").value = "";
+                ws.send(message);
+            }
+        </script>
     </body>
 </html>
 """

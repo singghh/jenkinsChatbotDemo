@@ -172,7 +172,7 @@ html = """
         <button onclick="sendMessage()">Send</button>
         <p id="response"></p>
 <script>
-    var ws = new WebSocket("ws://jenkins-chatbot.onrender.com/ws");
+    var ws = new WebSocket("wss://jenkinschatbotdemo.onrender.com/ws");
     ws.onmessage = function(event) {
         document.getElementById("response").innerText = event.data;
     };
